@@ -21,11 +21,15 @@
 
                     <img src="/logo.png" class="h-9 mr-3" alt="FlowBite Logo" />
                     <span
-                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Etzio</span>
+                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                        Etzio
+                    </span>
 
                 </div>
                 <div class="flex items-center">
                     <div class="flex items-center ml-3">
+
+                        <!-- TODO Acá iria el ícono de modo nocturno -->
                         <div>
                             <button type="button"
                                 class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
