@@ -1,0 +1,18 @@
+{
+    "user": "u161900",
+    "name": "Rodrigo Casas",
+    "token": "SDOPIAPUR0934809UW08UQ0IDNASJKDHA234",
+    "menus": [
+        "auditoria",
+        "observaciones",
+        "requerimientos",
+        {
+            "parametros": [
+                "periodos",
+                "ciclos",
+                "usuarios",
+                "logs"
+            ]
+        }
+    ]
+}
