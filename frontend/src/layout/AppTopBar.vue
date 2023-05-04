@@ -1,5 +1,5 @@
 <script setup>
-
+const props = defineProps(['nombre', 'email'])
 </script>
 
 <template>
@@ -20,8 +20,7 @@
                     </button>
 
                     <img src="/logo.png" class="h-9 mr-3" alt="FlowBite Logo" />
-                    <span
-                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
                         AppAuditoria
                     </span>
 
@@ -35,18 +34,18 @@
                                 class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                                 aria-expanded="false" data-dropdown-toggle="dropdown-user">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="w-8 h-8 rounded-full"
-                                    src="https://avatars.githubusercontent.com/u/64701850?v=4" alt="user photo">
+                                <img class="w-8 h-8 rounded-full" src="https://avatars.githubusercontent.com/u/64701850?v=4"
+                                    alt="user photo">
                             </button>
                         </div>
                         <div class="z-50 hidden text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
                             id="dropdown-user">
                             <div class="px-4 py-3" role="none">
                                 <p class="text-sm text-gray-900 dark:text-white" role="none">
-                                    Rodri Casas
+                                    {{ nombre }}
                                 </p>
                                 <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                                    cr.rodrigocasas@gmail.com
+                                    {{ email }}
                                 </p>
                             </div>
                             <ul class="py-1" role="none">

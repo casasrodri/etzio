@@ -1,15 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
-import getResponse from '../JsonReader'
-
-onMounted(() => {
-
-    async function getUser() {
-        const datos = await getResponse('login_rodri')
-        console.log(datos);
-    }
-    getUser()
-})
 </script>
 
 <template>
