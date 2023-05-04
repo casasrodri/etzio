@@ -22,7 +22,7 @@
                     <img src="/logo.png" class="h-9 mr-3" alt="FlowBite Logo" />
                     <span
                         class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                        Etzio
+                        AppAuditoria
                     </span>
 
                 </div>
