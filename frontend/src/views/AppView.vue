@@ -9,6 +9,14 @@ import getResponse from '../JsonReader'
 const usuario = reactive({name: 'Username', email: 'user@company.com'})
 const menus_show = reactive({})
 
+
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'k') {
+    event.preventDefault()
+    alert('En este momento se abriría el buscador...');
+  }
+});
+
 onMounted(() => {
 
     async function getUser() {

@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from 'vue-router'
 const props = defineProps(['nombre', 'email'])
 </script>
 
@@ -19,10 +20,12 @@ const props = defineProps(['nombre', 'email'])
                         </svg>
                     </button>
 
-                    <img src="/logo.png" class="h-9 mr-3" alt="FlowBite Logo" />
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                        AppAuditoria
-                    </span>
+                    <RouterLink :to="{ name: 'app' }" class="flex items-center justify-start">
+                        <img src="/logo.png" class="h-9 mr-3" alt="FlowBite Logo" />
+                        <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
+                            Etzio
+                        </span>
+                    </RouterLink>
 
                 </div>
                 <div class="flex items-center">

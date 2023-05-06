@@ -34,10 +34,6 @@ const props = defineProps(['menu'])
                         v-if="menu.param.log"/>
                 </DesplegableMenuItem>
 
-                <li>
-                    <RouterLink :to="{name: 'ciclos'}">Ciclos</RouterLink>
-                </li>
-
             </ul>
         </div>
     </aside>
