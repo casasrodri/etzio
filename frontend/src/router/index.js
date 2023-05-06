@@ -1,22 +1,45 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import AppView from '../views/AppView.vue'
+
+import UserHome from '../components/UserHome.vue'
+import CiclosList from '../components/CiclosList.vue'
+import Vacio from '../components/Vacio.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: AppView
+      redirect: '/app'
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
+    {
+      path: '/app',
+      name: 'app',
+      component: AppView,
+      children: [
+        {
+          path: '',
+          name: 'userhome',
+          component: UserHome
+        },
+        {
+          path: 'ciclos',
+          name: 'ciclos',
+          component: CiclosList,
+        },
+        {
+          path: 'otraURLaunVacia',
+          name: 'pendiente',
+          component: Vacio,
+        },
+      ],
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Vacio
+    }
   ]
 })
 

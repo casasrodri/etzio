@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import { initFlowbite  } from 'flowbite'
-import Icon from './Icon.vue';
+import Icon from '../components/Icon.vue';
 
 const props = defineProps(['nombre', 'icon', 'desplegado'])
 

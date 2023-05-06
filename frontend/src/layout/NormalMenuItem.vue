@@ -1,13 +1,14 @@
 <script setup>
-import Icon from './Icon.vue';
+import { RouterLink } from 'vue-router'
+import Icon from '../components/Icon.vue';
 
-const props = defineProps(['nombre', 'icon'])
+const props = defineProps(['nombre', 'icon', 'url'])
 </script>
 
 <template>
     <li>
-        <a
-            href="#"
+        <RouterLink :to="{name: url}">
+        <div
             class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700
                         hover:text-blue-500"
         >
@@ -15,7 +16,8 @@ const props = defineProps(['nombre', 'icon'])
             <span class="flex-1 ml-3 whitespace-nowrap">
                 {{ nombre }}
             </span>
-        </a>
+        </div>
+        </RouterLink>
     </li>
 </template>
 

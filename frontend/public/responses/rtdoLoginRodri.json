@@ -1,0 +1,17 @@
+{
+    "user": "u161900",
+    "name": "Rodri Casas",
+    "email": "cr.rodrigocasas@gmail.com",
+    "token": "SDOPIAPUR0934809UW08UQ0IDNASJKDHA234",
+    "menu": {
+        "audit": true,
+        "observ": true,
+        "requer": true,
+        "param": {
+            "per": true,
+            "cicl": true,
+            "user": true,
+            "log": true
+        }
+    }
+}
