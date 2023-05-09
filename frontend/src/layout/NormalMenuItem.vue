@@ -1,10 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-import Icon from '../components/Icon.vue';
-
-const props = defineProps(['nombre', 'icon', 'url'])
-</script>
-
 <template>
     <li>
         <RouterLink :to="{name: url}">
@@ -20,6 +13,13 @@ const props = defineProps(['nombre', 'icon', 'url'])
         </RouterLink>
     </li>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router'
+import Icon from '../components/Icon.vue';
+
+const props = defineProps(['nombre', 'icon', 'url'])
+</script>
 
 <style scoped>
 </style>

@@ -1,18 +1,3 @@
-<script setup>
-import { onMounted } from 'vue'
-import { initFlowbite  } from 'flowbite'
-import Icon from '../components/Icon.vue';
-
-const props = defineProps(['nombre', 'icon', 'desplegado'])
-
-const randomId = Math.floor(Math.random() * 100000)
-
-// TODO ver cual es el init adecuado
-onMounted(() => {
-    initFlowbite ();
-})
-</script>
-
 <template>
     <li>
         <button type="button"
@@ -36,6 +21,21 @@ onMounted(() => {
         </ul>
     </li>
 </template>
+
+<script setup>
+import { onMounted } from 'vue'
+import { initFlowbite  } from 'flowbite'
+import Icon from '../components/Icon.vue';
+
+const props = defineProps(['nombre', 'icon', 'desplegado'])
+
+const randomId = Math.floor(Math.random() * 100000)
+
+// TODO ver cual es el init adecuado
+onMounted(() => {
+    initFlowbite ();
+})
+</script>
 
 <style scoped>
 </style>

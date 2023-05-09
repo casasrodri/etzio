@@ -1,8 +1,3 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-const props = defineProps(['nombre', 'url'])
-</script>
-
 <template>
     <li>
         <RouterLink :to="{ name: url }">
@@ -13,6 +8,11 @@ const props = defineProps(['nombre', 'url'])
         </RouterLink>
     </li>
 </template>
+
+<script setup>
+import { RouterLink } from 'vue-router'
+const props = defineProps(['nombre', 'url'])
+</script>
 
 <style scoped>
 </style>

@@ -1,13 +1,3 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import NormalMenuItem from './NormalMenuItem.vue'
-import DesplegableMenuItem from './DesplegableMenuItem.vue'
-import SubItemMenu from './SubItemMenu.vue';
-
-const props = defineProps(['menu'])
-
-</script>
-
 <template>
     <aside id="logo-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
@@ -38,6 +28,14 @@ const props = defineProps(['menu'])
         </div>
     </aside>
 </template>
+
+<script setup>
+import NormalMenuItem from './NormalMenuItem.vue'
+import DesplegableMenuItem from './DesplegableMenuItem.vue'
+import SubItemMenu from './SubItemMenu.vue';
+
+const props = defineProps(['menu'])
+</script>
 
 <style scoped>
 </style>

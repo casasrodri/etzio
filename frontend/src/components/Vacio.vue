@@ -1,11 +1,9 @@
-<script setup>
-
-</script>
-
 <template>
     <h1>COMPONENTE VACIO</h1>
 </template>
 
-<style scoped>
+<script setup>
+</script>
 
+<style scoped>
 </style>

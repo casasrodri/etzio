@@ -1,10 +1,9 @@
-<script setup>
-</script>
-
 <template>
     <i class="pi"></i>
 </template>
 
-<style scoped>
+<script setup>
+</script>
 
+<style scoped>
 </style>
