@@ -16,7 +16,7 @@ import "primevue/resources/primevue.min.css";
 import 'primeicons/primeicons.css';
 
 // Temas
-import 'primevue/resources/themes/saga-green/theme.css'
+import 'primevue/resources/themes/saga-blue/theme.css'
 // import 'primevue/resources/themes/tailwind-light/theme.css'
 // import 'primevue/resources/themes/lara-light-teal/theme.css'
 // import 'primevue/resources/themes/vela-orange/theme.css'
