@@ -4,6 +4,7 @@ import AppView from '../views/AppView.vue'
 
 import UserHome from '../components/UserHome.vue'
 import CiclosList from '../components/CiclosList.vue'
+import AuditoriasList from '../components/AuditoriasList.vue'
 import Vacio from '../components/Vacio.vue'
 
 const router = createRouter({
@@ -18,6 +19,11 @@ const router = createRouter({
       name: 'app',
       component: AppView,
       children: [
+        {
+          path: 'auditorias',
+          name: 'auditorias',
+          component: AuditoriasList
+        },
         {
           path: '',
           name: 'userhome',

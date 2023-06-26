@@ -1,9 +1,9 @@
 <template>
-    <h1 class="text-xl font-bold">User Home</h1>
-    <hr />
+    <span>Lista de auditorías</span>
 </template>
 
 <script setup>
+
 </script>
 
 <style scoped>

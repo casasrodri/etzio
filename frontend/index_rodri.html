@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="logo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etzio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    #contenedor-bajo-barra {
+      height: calc(100% - 2.5rem);
+    }
+
+    /* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+    .svg-icon {
+      width: 1em;
+      height: 1em;
+    }
+
+    .svg-icon path,
+    .svg-icon polygon,
+    .svg-icon rect {
+      fill: #4691f6;
+    }
+
+    .svg-icon circle {
+      stroke: #4691f6;
+      stroke-width: 1;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  <div class="text-xl font-bold bg-teal-100 h-10 text-center" id="barra-superior">Etzio</div>
+
+  <div class="flex" id="contenedor-bajo-barra">
+    <div class="bg-gray-100 w-56 hidden sm:block" id="barra-lateral">
+
+      <ul class="pl-2 pt-3">
+        <li class="mb-3">
+          <svg class="w-5 h-5 text-gray-500 dark:text-white inline" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+            <path
+              d="M16 0H4a2 2 0 0 0-2 2v1H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM13.929 17H7.071a.5.5 0 0 1-.5-.5 3.935 3.935 0 1 1 7.858 0 .5.5 0 0 1-.5.5Z" />
+          </svg>
+          Menu 1
+        </li>
+        <li class="mb-3">
+          <svg class="w-5 h-5 text-gray-500 dark:text-white inline" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 4H1m3 4H1m3 4H1m3 4H1m6.071.286a3.429 3.429 0 1 1 6.858 0M4 1h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Zm9 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
+          </svg>
+          Menu 2
+        </li>
+        <li class="mb-3">
+          <svg class="w-5 h-5 text-gray-500 dark:text-white inline" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+            <path
+              d="M1 5h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 1 0 0-2H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2Zm18 4h-1.424a3.228 3.228 0 0 0-6.152 0H1a1 1 0 1 0 0 2h10.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Zm0 6H8.576a3.228 3.228 0 0 0-6.152 0H1a1 1 0 0 0 0 2h1.424a3.228 3.228 0 0 0 6.152 0H19a1 1 0 0 0 0-2Z" />
+          </svg>
+          Menu 3
+        </li>
+      </ul>
+    </div>
+    <div class="bg-white flex-auto" id="contenido-dinamico">
+      Contenido Dinámico
+    </div>
+  </div>
+</body>
+
+</html>
