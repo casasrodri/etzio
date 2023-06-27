@@ -44,13 +44,11 @@
 </template>
 
 <script setup>
-// TODO Leer ciclos y subciclos, y ver como le paso el id a cada botón
 import { onMounted, ref } from 'vue';
 import getNodeResponse from '../NodeService';
 
 const filters = ref({});
 const treeTableValue = ref(null);
-// const nodeService = new NodeService();
 
 onMounted(() => {
     getNodeResponse('nodosCiclos').then((data) => (treeTableValue.value = data));

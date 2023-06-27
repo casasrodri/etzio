@@ -6,15 +6,15 @@ import AppTopBar from '../layout/AppTopBar.vue';
 import AppSideMenu from '../layout/AppSideMenu.vue'
 import getResponse from '../JsonReader'
 
-const usuario = reactive({name: 'Username', email: 'user@company.com'})
+const usuario = reactive({ name: 'Username', email: 'user@company.com' })
 const menus_show = reactive({})
 
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.ctrlKey && event.key === 'k') {
-    event.preventDefault()
-    alert('En este momento se abriría el buscador...');
-  }
+        event.preventDefault()
+        alert('[Ctrl+K] En este momento se abriría el buscador...');
+    }
 });
 
 onMounted(() => {
@@ -32,7 +32,7 @@ onMounted(() => {
 
 <template>
     <AppTopBar :nombre="usuario.name" :email="usuario.email" />
-    <AppSideMenu :menu="menus_show"/>
+    <AppSideMenu :menu="menus_show" />
     <div class="p-3 sm:ml-64 mt-14">
         <RouterView />
     </div>

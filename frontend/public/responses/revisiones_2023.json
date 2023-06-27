@@ -1,0 +1,112 @@
+{
+    "root": [
+        {
+            "key": "1",
+            "data": {
+                "id": 1,
+                "codigo": "PLD",
+                "nombre": "Prevenci\u00f3n de Lavado de Dinero",
+                "padre": 0,
+                "cod_ext": "PLD",
+                "accion": "iniciar"
+            },
+            "children": []
+        },
+        {
+            "key": "2",
+            "data": {
+                "id": 2,
+                "codigo": "DEP",
+                "nombre": "Dep\u00f3sitos",
+                "padre": 0,
+                "cod_ext": "DEP"
+            },
+            "children": [
+                {
+                    "key": "2.1",
+                    "data": {
+                        "id": 4,
+                        "codigo": "CA",
+                        "nombre": "Caja de Ahorro",
+                        "padre": 2,
+                        "cod_ext": "DEP.CA"
+                    },
+                    "children": [
+                        {
+                            "key": "2.1.1",
+                            "data": {
+                                "id": 6,
+                                "codigo": "CGU",
+                                "nombre": "Cuenta Gratuita Universal",
+                                "padre": 4,
+                                "cod_ext": "DEP.CA.CGU",
+                                "accion": "finalizado"
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "key": "2.2",
+                    "data": {
+                        "id": 5,
+                        "codigo": "CC",
+                        "nombre": "Cuenta Corriente",
+                        "padre": 2,
+                        "cod_ext": "DEP.CC"
+                    },
+                    "children": [
+                        {
+                            "key": "2.2.1",
+                            "data": {
+                                "id": 8,
+                                "codigo": "COM",
+                                "nombre": "Comercial",
+                                "padre": 5,
+                                "cod_ext": "DEP.CC.COM",
+                                "accion": "ingresar"
+                            },
+                            "children": []
+                        },
+                        {
+                            "key": "2.2.2",
+                            "data": {
+                                "id": 9,
+                                "codigo": "IND",
+                                "nombre": "Individuos",
+                                "padre": 5,
+                                "cod_ext": "DEP.CC.IND",
+                                "accion": "ingresar"
+                            },
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "3",
+            "data": {
+                "id": 3,
+                "codigo": "CONT",
+                "nombre": "Contabilidad",
+                "padre": 0,
+                "cod_ext": "CONT"
+            },
+            "children": [
+                {
+                    "key": "3.1",
+                    "data": {
+                        "id": 7,
+                        "codigo": "MCC",
+                        "nombre": "Mesa de Control Contable",
+                        "padre": 3,
+                        "cod_ext": "CONT.MCC",
+                        "accion": "iniciar"
+                    },
+                    "children": []
+                }
+            ]
+        }
+    ]
+}

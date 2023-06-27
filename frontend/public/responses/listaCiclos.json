@@ -1,0 +1,20 @@
+[
+    {
+        "codigo": "2023",
+        "nombre": "Plan Anual 2023",
+        "tipo": "anual",
+        "estado": "en curso"
+    },
+    {
+        "codigo": "LIP-202302",
+        "nombre": "Revisión Especial LIP - 2° trimestre",
+        "tipo": "especial",
+        "estado": "en curso"
+    },
+    {
+        "codigo": "2022",
+        "nombre": "Plan Anual 2022",
+        "tipo": "anual",
+        "estado": "finalizado"
+    }
+]

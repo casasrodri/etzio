@@ -5,7 +5,11 @@ import AppView from '../views/AppView.vue'
 import UserHome from '../components/UserHome.vue'
 import CiclosList from '../components/CiclosList.vue'
 import AuditoriasList from '../components/AuditoriasList.vue'
+import Auditoria from '../components/Auditoria.vue'
+import Revision from '../components/Revision.vue'
 import Vacio from '../components/Vacio.vue'
+
+const tituloPredeterminado = 'Etzio'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,11 +23,50 @@ const router = createRouter({
       name: 'app',
       component: AppView,
       children: [
+
+        // Lista de auditorias
         {
           path: 'auditorias',
           name: 'auditorias',
-          component: AuditoriasList
+          component: AuditoriasList,
+          meta: {
+            title: 'Auditorías'
+          }
         },
+
+        // Auditoría
+        {
+          path: 'auditorias/:codigo',
+          component: Auditoria,
+          meta: {
+            title: 'Auditoría'
+          }
+        },
+        {
+          path: 'auditorias/:codigo/:nombre',
+          component: Auditoria,
+          meta: {
+            title: 'Auditoría'
+          }
+        },
+
+        // Revisión
+        {
+          path: 'auditorias/:auditoria/revisiones/:revision',
+          component: Revision,
+          meta: {
+            title: 'Revisión'
+          }
+        },
+        {
+          path: 'auditorias/:auditoria/revisiones/:revision/:nombre',
+          component: Revision,
+          meta: {
+            title: 'Revisión'
+          }
+        },
+
+        // Base de usuario
         {
           path: '',
           name: 'userhome',
@@ -32,7 +75,9 @@ const router = createRouter({
         {
           path: 'ciclos',
           name: 'ciclos',
-          component: CiclosList,
+          component: CiclosList, meta: {
+            title: 'Ciclos'
+          }
         },
         {
           path: 'otraURLaunVacia',
@@ -48,5 +93,13 @@ const router = createRouter({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  // const nuevo = `${tituloPredeterminado} | ${to.meta.title}`
+  const pageTitle = to.meta.title || tituloPredeterminado;
+
+  document.title = pageTitle;
+  next();
+});
 
 export default router
