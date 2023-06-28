@@ -1,0 +1,87 @@
+{
+    "root": [
+        {
+            "key": "1",
+            "data": {
+                "id": 1,
+                "codigo": "MP1",
+                "nombre": "Alta de cuentas corrientes",
+                "padre": 0,
+                "tipo": "MP"
+            },
+            "children": [
+                {
+                    "key": "1.1",
+                    "data": {
+                        "id": 2,
+                        "codigo": "PR1",
+                        "nombre": "Alta por red de sucursales",
+                        "padre": 1,
+                        "tipo": "PR"
+                    },
+                    "children": [
+                        {
+                            "key": "1.1.1",
+                            "data": {
+                                "id": 3,
+                                "codigo": null,
+                                "nombre": "Operatoria habitual",
+                                "padre": 2,
+                                "tipo": "R",
+                                "url": "MP1/PR1/operatoria-habitual"
+                            },
+                            "children": []
+                        },
+                        {
+                            "key": "1.1.2",
+                            "data": {
+                                "id": 4,
+                                "codigo": null,
+                                "nombre": "Operatoria por contingencia",
+                                "padre": 2,
+                                "tipo": "R",
+                                "url": "MP1/PR1/operatoria-por-contingencia"
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "key": "1.2",
+                    "data": {
+                        "id": 5,
+                        "codigo": "PR2",
+                        "nombre": "Alta en áreas centrales",
+                        "padre": 1,
+                        "tipo": "PR"
+                    },
+                    "children": [
+                        {
+                            "key": "1.1.2",
+                            "data": {
+                                "id": 6,
+                                "codigo": null,
+                                "nombre": "Sector Gobierno y Entes Públicos",
+                                "padre": 2,
+                                "tipo": "R",
+                                "url": "MP1/PR2/sector-gobierno-y-entes-publicos"
+                            },
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "2",
+            "data": {
+                "id": 7,
+                "codigo": "MP2",
+                "nombre": "Contabilización de operaciones",
+                "padre": 1,
+                "tipo": "MP"
+            },
+            "children": []
+        }
+    ]
+}
