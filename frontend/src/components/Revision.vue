@@ -132,7 +132,7 @@ function activarTabURL() {
 }
 
 function setUrlQueryParameter(seccion) {
-    router.push({ query: { tab: seccion } });
+    router.replace({ query: { tab: seccion } });
 }
 
 const relevamientos = ref();

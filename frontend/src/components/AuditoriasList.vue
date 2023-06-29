@@ -69,7 +69,7 @@ function colorEstado(estado) {
 }
 
 const onRowClick = ({ data: { codigo, nombre } }) => {
-    router.push({ path: `app/auditorias/${codigo}/${toURLName(nombre)}` })
+    router.push({ path: `/app/auditorias/${codigo}/${toURLName(nombre)}` })
 };
 </script>
 
