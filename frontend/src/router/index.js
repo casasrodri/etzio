@@ -7,7 +7,7 @@ import CiclosList from '../components/CiclosList.vue'
 import AuditoriasList from '../components/AuditoriasList.vue'
 import Auditoria from '../components/Auditoria.vue'
 import Revision from '../components/Revision.vue'
-import DocumentoRevision from '../components/DocumentoRevision.vue'
+import DocumentoRelevamiento from '../components/DocumentoRelevamiento.vue'
 import Vacio from '../components/Vacio.vue'
 
 const tituloPredeterminado = 'Etzio'
@@ -72,14 +72,14 @@ const router = createRouter({
         // Documentos de Revisión
         {
           path: 'auditorias/:auditoria/revisiones/:revision/doc/:mp/:pr',
-          component: DocumentoRevision,
+          component: DocumentoRelevamiento,
           meta: {
             title: 'Relevamiento'
           }
         },
         {
           path: 'auditorias/:auditoria/revisiones/:revision/doc/:mp/:pr/:nombre',
-          component: DocumentoRevision,
+          component: DocumentoRelevamiento,
           meta: {
             title: 'Relevamiento'
           }
