@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import getResponse from '../JsonReader'
-import getNodeResponse from '../NodeService'
+import getResponse from '../assets/js/JsonReader'
+import getNodeResponse from '../assets/js/NodeService'
 import ButtonRevision from './ButtonRevision.vue';
 
 const route = useRoute();

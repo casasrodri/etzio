@@ -8,7 +8,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-import { toURLName } from '../helpers'
+import { toURLName } from '../assets/js/helpers'
 
 const props = defineProps(['estado', 'url'])
 

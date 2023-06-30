@@ -4,7 +4,7 @@ import { RouterView } from 'vue-router'
 
 import AppTopBar from '../layout/AppTopBar.vue';
 import AppSideMenu from '../layout/AppSideMenu.vue'
-import getResponse from '../JsonReader'
+import getResponse from '../assets/js/JsonReader'
 
 const usuario = reactive({ name: 'Username', email: 'user@company.com' })
 const menus_show = reactive({})

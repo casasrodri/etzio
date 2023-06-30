@@ -115,8 +115,8 @@
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import router from '../router/index'
-import getResponse from '../JsonReader'
-import getNodeResponse from '../NodeService'
+import getResponse from '../assets/js/JsonReader'
+import getNodeResponse from '../assets/js/NodeService'
 import TablaRelevamientos from './TablaRelevamientos.vue'
 
 const route = useRoute();

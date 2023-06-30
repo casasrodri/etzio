@@ -45,7 +45,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import getNodeResponse from '../NodeService';
+import getNodeResponse from '../assets/js/NodeService';
 
 const filters = ref({});
 const treeTableValue = ref(null);
