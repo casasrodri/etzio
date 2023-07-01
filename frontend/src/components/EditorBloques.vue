@@ -33,6 +33,7 @@ import Alert from 'editorjs-alert';
 import FootnotesTune from '@editorjs/footnotes';
 import DragDrop from 'editorjs-drag-drop';
 import SimpleImage from '../assets/js/editorjs-simple-image/simple-image'
+import CtrlRelevante from '../assets/js/block-ctrl-relevante/ctrl-relevante'
 
 const dataDefault = {
     time: 1688093245224,
@@ -218,7 +219,7 @@ const editor = new EditorJS({
             tunes: ['footnotes'],
         },
 
-        rodri: SimpleImage,
+        ctrlrelevante: CtrlRelevante,
 
         // quote: {
         //     class: Quote,

@@ -18,6 +18,7 @@ import Tag from 'primevue/tag';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
 import TreeTable from 'primevue/treetable'
+import Tooltip from 'primevue/tooltip';
 
 // Estilos
 import './assets/main.css'
@@ -49,5 +50,7 @@ app.component('TabPanel', TabPanel);
 app.component('Tag', Tag);
 app.component('Toast', Toast);
 app.component('TreeTable', TreeTable);
+
+app.directive('tooltip', Tooltip);
 
 app.mount('#app')
