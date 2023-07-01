@@ -114,7 +114,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import router from '../router/index'
+import router from '../router'
 import getResponse from '../assets/js/JsonReader'
 import getNodeResponse from '../assets/js/NodeService'
 import TablaRelevamientos from './TablaRelevamientos.vue'

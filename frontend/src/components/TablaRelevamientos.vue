@@ -38,7 +38,7 @@
 </template>
 
 <script setup>
-import router from '../router/index'
+import router from '../router'
 import { useRoute } from 'vue-router';
 const route = useRoute();
 
