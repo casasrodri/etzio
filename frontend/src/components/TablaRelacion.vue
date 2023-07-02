@@ -1,6 +1,7 @@
 <template>
     <h1 class="text-lg font-semibold mb-3 capitalize"
         v-if="['normativas', 'organigrama', 'aplicativos'].includes(props.tipo)">{{ tipo }}</h1>
+
     <div id="container" class="">
         <div class="grid max-w-6xl">
             <div class="col-12">
@@ -27,16 +28,33 @@
             </div>
         </div>
     </div>
+    <div class="mt-2">
+        <Button label="Nuevo" icon="pi pi-plus" size="small" severity="success" id="btnNuevoRel" v-if="props.btnNuevo"
+            @click="nuevo" />
+    </div>
 </template>
 
 <script setup>
 import router from '../router';
 import { useRoute } from 'vue-router';
 
+function nuevo() {
+    alert(`Se está creando un nuevo elemento del tipo: ${props.tipo}`)
+}
 const route = useRoute()
-const props = defineProps(['tipo'])
+const props = defineProps(['tipo', 'btnNuevo'])
 
 const asociaciones = {
+    controles: [
+        {
+            link: '/app/auditorias/2023/revisiones/DEP-CC-COM/control/87',
+            descripcion: 'Validación de identidad y carga de información',
+        },
+        {
+            link: '/app/auditorias/2023/revisiones/DEP-CC-COM/control/81',
+            descripcion: 'Conciliación bancaria mensual',
+        },
+    ],
     observaciones: [
         {
             link: '/app/observaciones/2',
@@ -61,7 +79,6 @@ const asociaciones = {
             descripcion: 'Análisis de cuentas de resultados globales.',
         },
     ],
-
     riesgos: [
         {
             link: '/app/auditorias/2023/revisiones/DEP-CC-COM/riesgo/1',
@@ -109,23 +126,8 @@ function alertt(num) {
     alert(JSON.stringify(num))
 }
 
-function onRowClick(e) {
-    console.log(e.data)
-    const id = e.data.id
-    console.log(route.params);
-    console.log(props.tipo);
-
-    const link = {
-        pruebas: `/app/auditorias/2023/revisiones/DEP-CC-COM/control/${id}`,
-        riesgos: `/app/auditorias/${route.params}}/revisiones/DEP-CC-COM/control/${id}`,
-        controles: ``,
-        observaciones: `/app/observaciones/${id}`,
-        organigrama: `/app/organigrama/${id}`,
-        normativas: `/app/normativas/${id}`,
-        aplicativos: `/app/aplicativos/${id}`,
-    }
-
-    router.push({ path: link[props.tipo] })
+function onRowClick(row) {
+    router.push({ path: row.data.link })
 }
 
 import { ref, defineEmits } from 'vue';

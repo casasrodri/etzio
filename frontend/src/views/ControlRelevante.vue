@@ -67,7 +67,7 @@
             <div class="card">
                 <Panel toggleable :collapsed="panelCollapsed.observaciones" @cantidad-obs="cantObs = $event">
 
-                    <RelacTablaPruebas tipo="observaciones" />
+                    <TablaRelacion tipo="observaciones" />
 
                     <template #header>
                         <div class="flex flex-row font-semibold gap-2"
@@ -90,7 +90,7 @@
             <div class="card">
                 <Panel toggleable :collapsed="panelCollapsed.pruebas">
 
-                    <RelacTablaPruebas tipo="pruebas" />
+                    <TablaRelacion tipo="pruebas" />
 
                     <template #header>
                         <div class="flex flex-row gap-2" @click="panelCollapsed.pruebas = !panelCollapsed.pruebas">
@@ -110,7 +110,7 @@
             <div class="card">
                 <Panel toggleable :collapsed="panelCollapsed.riesgos">
 
-                    <RelacTablaPruebas tipo="riesgos" />
+                    <TablaRelacion tipo="riesgos" />
 
                     <template #header>
                         <div class="flex flex-row gap-2" @click="panelCollapsed.riesgos = !panelCollapsed.riesgos">
@@ -130,7 +130,7 @@
             <div class="card">
                 <Panel toggleable :collapsed="panelCollapsed.relaciones">
 
-                    <RelacTablaPruebas :tipo="relacSeleccionada" />
+                    <TablaRelacion :tipo="relacSeleccionada" />
 
                     <template #header>
                         <div class="flex flex-row gap-2" @click="panelCollapsed.relaciones = !panelCollapsed.relaciones">
@@ -177,7 +177,7 @@ import Dropdown from 'primevue/dropdown';
 import Panel from 'primevue/panel';
 import Badge from 'primevue/badge';
 
-import RelacTablaPruebas from '../components/RelacTablaPruebas.vue';
+import TablaRelacion from '../components/TablaRelacion.vue';
 
 
 const controlInfo = ref({
