@@ -197,7 +197,7 @@ const panelCollapsed = reactive({
     observaciones: false,
     pruebas: false,
     riesgos: false,
-    relaciones: false
+    relaciones: true
 })
 
 // TODO: Hacer que si no hay observaciones figure collapsed.

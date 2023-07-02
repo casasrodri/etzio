@@ -9,8 +9,8 @@ import AuditoriasList from './views/AuditoriasList.vue'
 import Auditoria from './views/Auditoria.vue'
 import Revision from './views/Revision.vue'
 import Relevamiento from './views/Relevamiento.vue'
-
 import ControlRelevante from './views/ControlRelevante.vue'
+import Riesgo from './views/Riesgo.vue'
 
 import ParamCiclos from './views/ParamCiclos.vue'
 
@@ -67,6 +67,14 @@ const router = createRouter({
             title: 'Control'
           }
         },
+        {
+          path: 'auditorias/:auditoria/revisiones/:revision/riesgo/:id/:nombre?',
+          component: Riesgo,
+          meta: {
+            title: 'Riesgo'
+          }
+        },
+
 
 
 
