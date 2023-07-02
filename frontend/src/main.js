@@ -4,6 +4,7 @@ import App from './App.vue'
 import router from './router'
 
 // PrimeVue Components
+import { RouterLink } from 'vue-router'
 import PrimeVue from 'primevue/config';
 import Button from 'primevue/button'
 import Column from 'primevue/column'
@@ -50,6 +51,9 @@ app.component('TabPanel', TabPanel);
 app.component('Tag', Tag);
 app.component('Toast', Toast);
 app.component('TreeTable', TreeTable);
+
+// Router Link
+app.component('RouterLink', RouterLink);
 
 app.directive('tooltip', Tooltip);
 

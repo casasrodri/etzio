@@ -59,17 +59,16 @@
 </template>
 
 <script setup>
-import ScrollTop from 'primevue/scrolltop';
-import Dialog from 'primevue/dialog';
-import EditorBloques from './EditorBloques.vue';
-import Menu from 'primevue/menu';
-
 import { ref } from 'vue';
 import { useToast } from 'primevue/usetoast';
-import { useRouter } from 'vue-router';
+
+// TODO: Incoporar a nivel de la aplicación
+import ScrollTop from 'primevue/scrolltop';
+import Dialog from 'primevue/dialog';
+import Menu from 'primevue/menu';
+import EditorBloques from '../components/EditorBloques.vue';
 
 const toast = useToast();
-const router = useRouter();
 
 const dialogoVisible = ref(false);
 const dialogoHeader = ref(' ');

@@ -28,11 +28,11 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import getResponse from '../assets/js/JsonReader'
-import router from '../router'
 import { toURLName } from '../assets/js/helpers'
-import TagTipo from './TagTipo.vue';
-import TagEstado from './TagEstado.vue';
+import getResponse from '../assets/js/JsonReader'
+import TagTipo from '../components/TagTipo.vue';
+import TagEstado from '../components/TagEstado.vue';
+import router from '../router'
 
 const listaCiclos = ref()
 

@@ -117,7 +117,7 @@ import { useRoute } from 'vue-router';
 import router from '../router'
 import getResponse from '../assets/js/JsonReader'
 import getNodeResponse from '../assets/js/NodeService'
-import TablaRelevamientos from './TablaRelevamientos.vue'
+import TablaRelevamientos from '../components/TablaRelevamientos.vue'
 
 const route = useRoute();
 const { auditoria, revision, nombre } = route.params

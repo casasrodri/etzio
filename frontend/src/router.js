@@ -3,12 +3,18 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AppView from './views/AppView.vue'
 
 import UserHome from './components/UserHome.vue'
-import CiclosList from './components/CiclosList.vue'
-import AuditoriasList from './components/AuditoriasList.vue'
-import Auditoria from './components/Auditoria.vue'
-import Revision from './components/Revision.vue'
-import DocumentoRelevamiento from './components/DocumentoRelevamiento.vue'
-import ControlRelevante from './components/ControlRelevante.vue'
+
+// Views
+import AuditoriasList from './views/AuditoriasList.vue'
+import Auditoria from './views/Auditoria.vue'
+import Revision from './views/Revision.vue'
+import DocumentoRelevamiento from './views/DocumentoRelevamiento.vue'
+
+import ControlRelevante from './views/ControlRelevante.vue'
+
+import ParamCiclos from './views/ParamCiclos.vue'
+
+import NotFound from './views/NotFound.vue'
 import Vacio from './components/Vacio.vue'
 
 const tituloPredeterminado = 'Etzio'
@@ -25,8 +31,6 @@ const router = createRouter({
       name: 'app',
       component: AppView,
       children: [
-
-        // Lista de auditorias
         {
           path: 'auditorias',
           name: 'auditorias',
@@ -35,8 +39,6 @@ const router = createRouter({
             title: 'Auditorías'
           }
         },
-
-        // Auditoría
         {
           path: 'auditorias/:codigo/:nombre?',
           component: Auditoria,
@@ -44,16 +46,6 @@ const router = createRouter({
             title: 'Auditoría'
           }
         },
-        // {
-        //   path: 'auditorias/:codigo/:nombre',
-        //   component: Auditoria,
-        //   meta: {
-        //     title: 'Auditoría'
-        //   }
-        // },
-
-
-        // Revisión
         {
           path: 'auditorias/:auditoria/revisiones/:revision/:nombre?',
           component: Revision,
@@ -61,16 +53,6 @@ const router = createRouter({
             title: 'Revisión'
           }
         },
-        // {
-        //   path: 'auditorias/:auditoria/revisiones/:revision/:nombre',
-        //   component: Revision,
-        //   meta: {
-        //     title: 'Revisión'
-        //   }
-        // },
-
-
-        // Documentos de Revisión
         {
           path: 'auditorias/:auditoria/revisiones/:revision/doc/:mp/:pr/:nombre?',
           component: DocumentoRelevamiento,
@@ -78,15 +60,6 @@ const router = createRouter({
             title: 'Relevamiento'
           }
         },
-        // {
-        //   path: 'auditorias/:auditoria/revisiones/:revision/doc/:mp/:pr/:nombre',
-        //   component: DocumentoRelevamiento,
-        //   meta: {
-        //     title: 'Relevamiento'
-        //   }
-        // },
-
-        // Control relevante
         {
           path: 'auditorias/:auditoria/revisiones/:revision/control/:id/:nombre?',
           component: ControlRelevante,
@@ -94,13 +67,8 @@ const router = createRouter({
             title: 'Control'
           }
         },
-        // {
-        //   path: 'auditorias/:auditoria/revisiones/:revision/control/:id/:nombre',
-        //   component: ControlRelevante,
-        //   meta: {
-        //     title: 'Control'
-        //   }
-        // },
+
+
 
         // Base de usuario
         {
@@ -111,7 +79,7 @@ const router = createRouter({
         {
           path: 'parametros/ciclos',
           name: 'ciclos',
-          component: CiclosList, meta: {
+          component: ParamCiclos, meta: {
             title: 'Ciclos'
           }
         },
@@ -126,7 +94,8 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Vacio
-    }
+    },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
   ]
 })
 

@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import getResponse from '../assets/js/JsonReader'
 import getNodeResponse from '../assets/js/NodeService'
-import ButtonRevision from './ButtonRevision.vue';
+import ButtonRevision from '../components/ButtonRevision.vue';
 
 const route = useRoute();
 const { codigo, nombre } = route.params
