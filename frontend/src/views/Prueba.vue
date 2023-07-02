@@ -1,10 +1,10 @@
 <template>
     <h1 class="text-xl font-bold mb-1">
-        {{ riesgoInfo.nombre }}
+        {{ pruebaInfo.nombre }}
     </h1>
 
     <h2 class="text-md font-medium text-gray-500 ml-5 mb-2">
-        {{ riesgoInfo.ciclo }}
+        {{ pruebaInfo.ciclo }}
     </h2>
 
     <hr class="mb-3" />
@@ -18,56 +18,48 @@
             </h3>
             <Inplace :closable="true" closeIcon="pi pi-save">
                 <template #display>
-                    {{ riesgoInfo.descripcion || 'Descripción' }}
+                    {{ pruebaInfo.descripcion || 'Descripción' }}
                 </template>
                 <template #content>
-                    <InputText v-model="riesgoInfo.descripcion" autofocus />
+                    <InputText v-model="pruebaInfo.descripcion" autofocus />
                 </template>
             </Inplace>
         </div>
 
-        <!-- Nivel de riesgo -->
-        <div id="nivel-riesgo" class="flex flex-row mb-4 mr-10">
+        <!-- Informe de auditoría -->
+        <div id="informe" class="flex flex-row mb-4 mr-10">
             <h3 class="font-ligth underline text-gray-600 mb-1 self-center mr-3">
-                Nivel:
+                Informe relacionado:
             </h3>
 
-            <Dropdown v-model="riesgoInfo.nivel" :options="nivelesRiesgo" />
+            <InputText type="text" v-model="pruebaInfo.informe" />
         </div>
 
-        <!-- Objetivos de control -->
-        <div id="objetivos-control" class="flex flex-col mb-4 mr-10">
-            <h3 class="font-ligth underline text-gray-600 self-left mb-3">
-                Objetivos de control:
+        <!-- Sector auditor -->
+        <div id="sector-auditor" class="flex flex-row mb-4 mr-10">
+            <h3 class="font-ligth underline text-gray-600 mb-1 self-center mr-3">
+                Sector de auditoría:
             </h3>
-
-            <div class="card flex justify-content-center">
-                <div class="flex flex-col gap-3">
-                    <div v-for="oc of objetivosControl" :key="oc.id" class="flex align-items-center">
-                        <Checkbox v-model="objetivosSeleccionados" :inputId="oc.key" name="nombre" :value="oc.nombre" />
-                        <label :for="oc.id" class="ml-2">{{ oc.nombre }}</label>
-                    </div>
-                </div>
-            </div>
+            <Dropdown v-model="pruebaInfo.sector" :options="sectoresAuditoria" />
         </div>
 
     </div>
 
     <div id="linea2">
 
-        <div id="pruebas" class="my-3 max-w-6xl">
+        <div id="riesgos" class="my-3 max-w-6xl">
             <div class="card">
-                <Panel toggleable :collapsed="panelCollapsed.pruebas">
+                <Panel toggleable :collapsed="panelCollapsed.riesgos">
 
-                    <TablaRelacion tipo="pruebas" />
+                    <TablaRelacion tipo="riesgos" />
 
                     <template #header>
-                        <div class="flex flex-row gap-2" @click="panelCollapsed.pruebas = !panelCollapsed.pruebas">
+                        <div class="flex flex-row gap-2" @click="panelCollapsed.riesgos = !panelCollapsed.riesgos">
                             <div>
-                                <i class="pi pi-search"></i>
+                                <i class="pi pi-exclamation-circle"></i>
                             </div>
                             <div class="font-semibold">
-                                Pruebas
+                                Riesgos
                             </div>
                         </div>
                     </template>
@@ -147,16 +139,18 @@ import Dropdown from 'primevue/dropdown';
 import Panel from 'primevue/panel';
 import Checkbox from 'primevue/checkbox';
 import TablaRelacion from '../components/TablaRelacion.vue';
+import InputText from 'primevue/inputtext';
 
-const riesgoInfo = ref({
-    nombre: 'El cliente no se encuentra registrado en el sistema',
+const pruebaInfo = ref({
+    nombre: 'Revisión de legajos de muestra de operaciones de alta',
     ciclo: 'Depósitos - Cuenta corriente - Comercial',
-    descripcion: 'Los legajos que documentación la relación con el cliente pueden no poseer la documentación autorizada para operar con la entidad.',
-    nivel: 'Alto',
+    descripcion: 'Solicitar una muestra de 10 legajos de altas de cuentas corrientes en la red de sucursales, y validar su integridad y autorización.',
+    informe: 'AO-DEP-CC-COM',
+    sector: 'Auditoría Centralizada'
 })
 
 const panelCollapsed = reactive({
-    pruebas: false,
+    riesgos: false,
     controles: false,
     relaciones: true
 })
@@ -166,6 +160,7 @@ const objetivosSeleccionados = ref([
     'Exactitud y oportunidad del ingreso',
     'Acceso restringido',
 ]);
+
 const objetivosControl = ref([
     { id: 1, nombre: 'Autorización' },
     { id: 2, nombre: 'Exactitud y oportunidad del ingreso' },
@@ -175,7 +170,12 @@ const objetivosControl = ref([
     { id: 6, nombre: 'Acceso restringido' },
 ]);
 
-const nivelesRiesgo = ['Alto', 'Medio', 'Bajo']
+const sectoresAuditoria = [
+    'Auditoría Centralizada',
+    'Auditoría Sistemas',
+    'Auditoría Sucursales',
+    'Auditoría Continua',
+]
 const relacSeleccionada = ref('normativas')
 
 function toggleRelaciones(tipo) {

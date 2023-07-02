@@ -11,6 +11,7 @@ import Revision from './views/Revision.vue'
 import Relevamiento from './views/Relevamiento.vue'
 import ControlRelevante from './views/ControlRelevante.vue'
 import Riesgo from './views/Riesgo.vue'
+import Prueba from './views/Prueba.vue'
 
 import ParamCiclos from './views/ParamCiclos.vue'
 
@@ -72,6 +73,13 @@ const router = createRouter({
           component: Riesgo,
           meta: {
             title: 'Riesgo'
+          }
+        },
+        {
+          path: 'auditorias/:auditoria/revisiones/:revision/prueba/:id/:nombre?',
+          component: Prueba,
+          meta: {
+            title: 'Prueba'
           }
         },
 
