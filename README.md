@@ -31,10 +31,16 @@ Para obtener el código fuente del prototipo, se deberá seguir alternativamente
     cd frontend
     ```
 
-2. Iniciar el servidor de desarrollo para visualizar la aplicación en el navegador:
+2. Instalar las dependencias del proyecto:
+
+    ```sh
+    npm install
+    ```
+
+3. Iniciar el servidor de desarrollo para visualizar la aplicación en el navegador:
 
     ```sh
     npm run dev
     ```
 
-3. Ingresar a la página indicada en la consola para visualizar la aplicación. Por defecto se muestra en el puerto 5173, siendo la url la siguiente: <http://localhost:5173>, pero podría asignarse otro puerto en caso de estar ocupado el mismo.
+4. Ingresar a la página indicada en la consola para visualizar la aplicación. Por defecto se muestra en el puerto 5173, siendo la url la siguiente: <http://localhost:5173>, pero podría asignarse otro puerto en caso de estar ocupado el mismo.
