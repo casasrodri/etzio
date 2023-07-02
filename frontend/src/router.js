@@ -8,7 +8,7 @@ import UserHome from './components/UserHome.vue'
 import AuditoriasList from './views/AuditoriasList.vue'
 import Auditoria from './views/Auditoria.vue'
 import Revision from './views/Revision.vue'
-import DocumentoRelevamiento from './views/DocumentoRelevamiento.vue'
+import Relevamiento from './views/Relevamiento.vue'
 
 import ControlRelevante from './views/ControlRelevante.vue'
 
@@ -55,7 +55,7 @@ const router = createRouter({
         },
         {
           path: 'auditorias/:auditoria/revisiones/:revision/doc/:mp/:pr/:nombre?',
-          component: DocumentoRelevamiento,
+          component: Relevamiento,
           meta: {
             title: 'Relevamiento'
           }

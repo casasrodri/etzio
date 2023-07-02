@@ -1,0 +1,145 @@
+<template>
+    <h1 class="text-lg font-semibold mb-3 capitalize"
+        v-if="['normativas', 'organigrama', 'aplicativos'].includes(props.tipo)">{{ tipo }}</h1>
+    <div id="container" class="">
+        <div class="grid max-w-6xl">
+            <div class="col-12">
+                <div class="card">
+                    <DataTable :value="asociaciones[props.tipo]" @rowClick="onRowClick">
+
+                        <Column header="ID" style="width: 40px; text-align: center;">
+                            <template #body="row">
+                                {{ row.data.link.split('/').at(-1) }}
+                            </template>
+                        </Column>
+                        <Column field="descripcion" header="Descripción" style="padding-left: 2px;"></Column>
+
+                        <Column header="Acciones" style="width: 70px;" headerStyle="text-align: center;">
+                            <template #body="row">
+                                <div class="flex flex-row justify-center">
+                                    <Button icon="pi pi-times" severity="danger" text rounded title="Eliminar"
+                                        @click="alertt(row.data)" size="small" class="basis-1/2" />
+                                </div>
+                            </template>
+                        </Column>
+                    </DataTable>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script setup>
+import router from '../router';
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
+const props = defineProps(['tipo'])
+
+const asociaciones = {
+    observaciones: [
+        {
+            link: '/app/observaciones/2',
+            descripcion: 'Normativa desactualizada.',
+        },
+        {
+            link: '/app/observaciones/16',
+            descripcion: 'Errores de autorización al ingreso al sistema.',
+        },
+        {
+            link: '/app/observaciones/20',
+            descripcion: 'Falta de segregación de funciones en control de identidad.',
+        },
+    ],
+    pruebas: [
+        {
+            link: '/app/auditorias/2023/revisiones/DEP-CC-COM/prueba/1',
+            descripcion: 'Revisión de legajos de muestra de operaciones de alta.',
+        },
+        {
+            link: '/app/auditorias/2023/revisiones/DEP-CC-COM/prueba/13',
+            descripcion: 'Análisis de cuentas de resultados globales.',
+        },
+    ],
+
+    riesgos: [
+        {
+            link: '/app/auditorias/2023/revisiones/DEP-CC-COM/riesgo/1',
+            descripcion: 'El cliente no se encuentra registrado en el sistema.',
+        }, {
+            link: '/app/auditorias/2023/revisiones/DEP-CC-COM/riesgo/2',
+            descripcion: 'Fraude por falta de identificación del personal interviniente.',
+        },
+    ],
+    normativas: [
+        {
+            link: '/app/normativas/102',
+            descripcion: 'Com. "A" 7200',
+        }, {
+            link: '/app/normativas/212',
+            descripcion: 'Manual de Cuenta Corriente',
+        },
+    ],
+    aplicativos: [
+        {
+            link: '/app/aplicativos/71',
+            descripcion: 'Bantotal',
+        },
+        {
+            link: '/app/aplicativos/26',
+            descripcion: 'Transactor Manager',
+        },
+        {
+            link: '/app/aplicativos/23',
+            descripcion: 'Smart Open Anywhere',
+        },
+    ],
+    organigrama: [
+        {
+            link: '/app/organigrama/12',
+            descripcion: 'Supervisor Operativo de Sucursal',
+        }, {
+            link: '/app/organigrama/88',
+            descripcion: 'Ejecutivo de Atención al Cliente',
+        },
+    ],
+}
+
+function alertt(num) {
+    alert(JSON.stringify(num))
+}
+
+function onRowClick(e) {
+    console.log(e.data)
+    const id = e.data.id
+    console.log(route.params);
+    console.log(props.tipo);
+
+    const link = {
+        pruebas: `/app/auditorias/2023/revisiones/DEP-CC-COM/control/${id}`,
+        riesgos: `/app/auditorias/${route.params}}/revisiones/DEP-CC-COM/control/${id}`,
+        controles: ``,
+        observaciones: `/app/observaciones/${id}`,
+        organigrama: `/app/organigrama/${id}`,
+        normativas: `/app/normativas/${id}`,
+        aplicativos: `/app/aplicativos/${id}`,
+    }
+
+    router.push({ path: link[props.tipo] })
+}
+
+import { ref, defineEmits } from 'vue';
+
+// FIX: No se emite correctamente el evento.
+const emit = defineEmits(['cantidad-obs']);
+// emit('cantidad-obs', asociaciones['observaciones'].length);
+emit('cantidad-obs', 33);
+
+</script>
+
+
+<style scoped>
+:deep(.p-datatable-tbody>tr>td) {
+    padding: 1px !important;
+}
+</style>

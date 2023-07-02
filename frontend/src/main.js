@@ -52,9 +52,6 @@ app.component('Tag', Tag);
 app.component('Toast', Toast);
 app.component('TreeTable', TreeTable);
 
-// Router Link
-app.component('RouterLink', RouterLink);
-
 app.directive('tooltip', Tooltip);
 
 app.mount('#app')
