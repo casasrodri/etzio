@@ -84,6 +84,36 @@ const router = createRouter({
         },
 
 
+        // {
+        //   path: 'observaciones',
+        //   component: ObservacionesList,
+        //   meta: {
+        //     title: 'Observaciones'
+        //   }
+        // },
+        // {
+        //   path: 'observaciones/:id/:nombre?',
+        //   component: Observacion,
+        //   meta: {
+        //     title: 'Observación'
+        //   }
+        // },
+
+
+        // {
+        //   path: 'requerimientos',
+        //   component: RequerimientosList,
+        //   meta: {
+        //     title: 'Requerimientos'
+        //   }
+        // },
+        // {
+        //   path: 'requerimientos/:id/:nombre?',
+        //   component: Requerimiento,
+        //   meta: {
+        //     title: 'Requerimiento'
+        //   }
+        // },
 
 
         // Base de usuario
