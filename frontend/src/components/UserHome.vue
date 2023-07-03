@@ -47,16 +47,21 @@
                 </div>
 
                 <!-- Otro -->
-                <div id="lista-auditorias">
-                    <h2 class="text-md font-medium">Lista de auditorias</h2>
+                <div id="auditoria">
+                    <h2 class="text-md font-medium">Auditoría</h2>
                     <p class="ml-4">
-                        Permite visualizar un listado de la auditorias en curso o finalizadas en el sistema.
+                        Permite visualizar los atributos de una auditoría, así como interactuar con las revisiones asociadas
+                        a la misma.
+                    </p>
+                    <p class="ml-4">
+                        Para continuar con el flujo de la aplicación, se debe ingresar a la revisión:
+                        <span class="italic">DEP-CC-COM</span> (Depósitos > Cuenta Corriente > Comercial).
                     </p>
                     <p class="ml-4 mt-1 mb-4">
                         <span class="text-semibold underline">Link ejemplo:</span>
                         &nbsp;
-                        <RouterLink :to="{ path: '/app/auditorias' }" class="text-cyan-500">
-                            app/auditorias
+                        <RouterLink :to="{ path: '/app/auditorias/2023/plan-anual-2023' }" class="text-cyan-500">
+                            app/auditorias/2023/plan-anual-2023
                         </RouterLink>
                     </p>
                 </div>
