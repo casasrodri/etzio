@@ -32,7 +32,10 @@ import { toURLName } from '../assets/js/helpers'
 import getResponse from '../assets/js/JsonReader'
 import TagTipo from '../components/TagTipo.vue';
 import TagEstado from '../components/TagEstado.vue';
-import router from '../router'
+// import router from '../router'
+
+import { useRouter } from 'vue-router';
+const router = useRouter()
 
 const listaCiclos = ref()
 

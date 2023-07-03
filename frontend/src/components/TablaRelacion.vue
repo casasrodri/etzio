@@ -35,8 +35,9 @@
 </template>
 
 <script setup>
-import router from '../router';
-import { useRoute } from 'vue-router';
+// import router from '../router';
+import { useRouter } from 'vue-router';
+const router = useRouter()
 
 function nuevo() {
     alert(`Se está creando un nuevo elemento del tipo: ${props.tipo}`)
@@ -129,8 +130,6 @@ function alertt(num) {
 function onRowClick(row) {
     router.push({ path: row.data.link })
 }
-
-import { ref, defineEmits } from 'vue';
 
 // FIX: No se emite correctamente el evento.
 const emit = defineEmits(['cantidad-obs']);

@@ -6,7 +6,7 @@
             <ul class="space-y-2 font-medium">
 
                 <DesplegableMenuItem nombre="Auditorías" icon="pi-search" v-if="menu.audit">
-                    <SubItemMenu nombre="Home" url="auditorias" />
+                    <SubItemMenu nombre="Auditorías" url="auditorias" />
                     <SubItemMenu nombre="Informes" url="pendiente" />
                     <SubItemMenu nombre="Normativas" url="pendiente" />
                     <SubItemMenu nombre="Aplicativos" url="pendiente" />

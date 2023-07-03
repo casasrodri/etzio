@@ -28,7 +28,7 @@ Para obtener el código fuente del prototipo, se deberá seguir alternativamente
 1. Navegar a la carpeta denominada *frontend*, ejecutando el siguiente comando:
 
     ```sh
-    cd frontend
+    cd etzio/frontend
     ```
 
 2. Instalar las dependencias del proyecto:

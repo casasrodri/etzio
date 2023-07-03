@@ -38,9 +38,9 @@
 </template>
 
 <script setup>
-import router from '../router'
-import { useRoute } from 'vue-router';
-const route = useRoute();
+// import router from '../router'
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
 const props = defineProps(['nodos'])
 // function alertt(t) { alert(JSON.stringify(t)) }
