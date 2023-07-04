@@ -42,7 +42,6 @@ const router = useRouter()
 function nuevo() {
     alert(`Se está creando un nuevo elemento del tipo: ${props.tipo}`)
 }
-const route = useRoute()
 const props = defineProps(['tipo', 'btnNuevo'])
 
 const asociaciones = {

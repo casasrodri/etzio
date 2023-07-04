@@ -99,16 +99,17 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
-// import router from '../router'
-const router = useRouter()
+import { useRoute, useRouter } from 'vue-router';
+
 import getResponse from '../assets/js/JsonReader'
 import getNodeResponse from '../assets/js/NodeService'
 import TablaRelevamientos from '../components/TablaRelevamientos.vue'
 import TablaRelacion from '../components/TablaRelacion.vue'
 
-const route = useRoute();
+const route = useRoute()
+const router = useRouter()
 const { auditoria, revision, nombre } = route.params
+
 const revis = ref({ nombre: 'Revisión' });
 const tabs = ['relevamiento', 'riesgos', 'controles', 'pruebas']
 const activeTab = ref(0)

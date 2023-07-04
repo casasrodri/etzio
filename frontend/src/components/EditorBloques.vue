@@ -4,7 +4,7 @@
         <div id="editorjs">
         </div>
     </div>
-    <hr>
+    <!-- <hr>
     <Button class="btn" @click="readOnlyToggle">Toggle</Button>
     <Button class="btn" @click="save">Guardar</Button>
     <Button class="btn" @click="verJson">Ver</Button>
@@ -15,7 +15,7 @@
 
     URL: {{ url }}
 
-    <div id="destino"></div>
+    <div id="destino"></div> -->
 </template>
 
 <script setup>
@@ -32,26 +32,46 @@ import Table from '@editorjs/table';
 import Alert from 'editorjs-alert';
 import FootnotesTune from '@editorjs/footnotes';
 import DragDrop from 'editorjs-drag-drop';
-import SimpleImage from '../assets/js/editorjs-simple-image/simple-image'
 import CtrlRelevante from '../assets/js/block-ctrl-relevante/ctrl-relevante'
 
 const dataDefault = {
     time: 1688093245224,
     blocks: [
         {
-            id: "mhTl6ghSkV",
-            type: "paragraph",
-            data: {
-                text: "Hey. Meet the new Editor. On this picture you can see it in action. Then, try a demo 🤓",
+            "id": "l98dyx3yjb",
+            "type": "header",
+            "data": {
+                "text": "Plan de cuentas contables",
+                "level": 2
+            }
+        },
+        {
+            "id": "21m0DYw7R_",
+            "type": "paragraph",
+            "data": {
+                "text": "Como ya veremos en detalle unos\nprocesos más adelante (<b>PR6.- Contabilización de Transacciones/Movimientos</b>),\nla Entidad utiliza diferente aplicativos para realizar sus operaciones diarias generando cada uno de ellos su propia contabilidad que, al final del día luego del proceso Batch, impacta en el sistema SBI (Sistema\nBancario Integral). Este último consolida toda la información contable del\nBanco y contiene el Plan de Cuentas\ndel Banco descripto en el instructivo CIMI00011,\nplan que ha sido definido acorde con los lineamientos establecidos por el BCRA\ny que es actualizado según las necesidades de nuestra Entidad y/o en función a\nlos cambios normativos impulsados por el Órgano Rector.emos en detalle unos\nprocesos más adelante (<b>PR6.- Contabilización de Transacciones/Movimientos</b>,\nla Entidad utiliza diferente aplicativos para realizar sus\noperaciones diarias generando cada uno de ellos su propia contabilidad que, al\nfinal del día luego del proceso Batch, impacta en el sistema SBI (Sistema\nBancario Integral). Este último consolida toda la información contable del\nBanco y contiene el Plan de Cuentas\ndel Banco descripto en el instructivo CIMI00011,\nplan que ha sido definido acorde con los lineamientos establecidos por el BCRA\ny que es actualizado según las necesidades de nuestra Entidad y/o en función a\nlos cambios normativos impulsados por el Órgano Rector."
             },
+            "tunes": {
+                "footnotes": []
+            }
         },
         {
             id: "l98dyx3yjb",
             type: "header",
             data: {
-                text: "Key features",
+                text: "Solicitud de alta de cuenta",
                 level: 3,
             },
+        },
+        {
+            "id": "VZg8kAFr8A",
+            "type": "paragraph",
+            "data": {
+                "text": "Cuando surge la necesidad de dar de alta una nueva cuenta contable (que contemple una transacción determinada o bien por un nuevo producto o servicio o bien por requerimiento del Órgano Rector), solicita la misma a través de un correo electrónico al Jefe de Departamento de Modelos Contables, incluyendo los siguientes datos:"
+            },
+            "tunes": {
+                "footnotes": []
+            }
         },
         {
             id: "os_YI4eub4",
@@ -59,96 +79,166 @@ const dataDefault = {
             data: {
                 type: "unordered",
                 items: [
-                    "It is a block-style editor",
-                    "It returns clean data output in JSON",
+                    "Descripción de la cuenta,",
+                    "Moneda,",
+                    "Responsable de conciliación,",
+                    "Saldo habitual,",
+                    "Autorizador,",
+                    "Proceso involucrado,",
+                    "Admisión de partidas pendientes."
                 ],
             },
         },
         {
-            id: "1yKeXKxN7-",
-            type: "header",
-            data: {
-                text: "What does it mean «block-styled editor»",
-                level: 3,
+            "id": "Kybux7QuMI",
+            "type": "paragraph",
+            "data": {
+                "text": "Una vez que el jefe de sector solicita la creación de la cuenta, el analista la crea y el supervisor de cuentas contables procede a verificar su correcta creación."
             },
+            "tunes": {
+                "footnotes": []
+            }
+        },
+        {
+            "id": "J8RBzJcG9y",
+            "type": "ctrlrelevante",
+            "data": {}
+        },
+        {
+            "id": "1yKeXKxN7-",
+            "type": "header",
+            "data": {
+                "text": "Modificación de cuentas contables",
+                "level": 2
+            }
         },
         {
             id: "TcUNySG15P",
             type: "paragraph",
             data: {
-                text: "Workspace in classic editors is made of a single contenteditable element, used to create different HTML markups. Editor.js workspace consists of separate Blocks: paragraphs, headings, images, lists, quotes, etc. Each of them is an independent contenteditable element (or more complex structure) provided by Plugin and united by Editor's Core.",
+                text: "Las modificaciones de cuentas que el sistema permite se relacionan con cambios en la descripción de la cuenta, en la posibilidad de que se gestione por el sistema de partidas pendientes o que se modifique alguno de los parámetros indicativos.",
             },
             tunes: {
-                footnotes: [
-                    "It works more stable then in other WYSIWYG editors. Same time it has smooth and well-known arrow navigation behavior like classic editors.",],
+                "footnotes": []
             },
         },
         {
-            id: "M3UXyblhAo",
-            type: "header",
-            data: {
-                text: "What does it mean clean data output?",
-                level: 3,
-            },
-        },
-        {
-            id: "KOcIofZ3Z1",
+            id: "TcUNySOO8D",
             type: "paragraph",
             data: {
-                text: "There are dozens of ready-to-use Blocks and a simple API  for creating any Block you need. For example, you can implement Blocks for Tweets, Instagram posts, surveys and polls, CTA buttons, and even games.",
+                text: "Del mismo modo que en el proceso de alta descripto precedentemente, ante la solicitud del área usuaria, integra el formulario ABM de Cuentas Contables e <b>ingresa la modificación en el aplicativo SBI/SAP. Luego imprime copia del formulario ABM de Cuentas Contables intervenido por el Jefe de Departamento de Modelos Contables y lo resguarda en una carpeta habilitada para tal efecto junto con los antecedentes que generaron la indicada modificación</b>, tal como los mails de solicitud de los usuarios.",
             },
             tunes: {
-                footnotes: [
-                    "Just take a look at our Creating Block Tool guide. You'll be surprised.",],
+                "footnotes": []
             },
         },
         {
-            id: "ksCokKAhQw",
-            type: "paragraph",
-            data: {
-                text: "Classic WYSIWYG editors produce raw HTML-markup with both content data and content appearance. On the contrary, Editor.js outputs JSON object</mark> with data of each Block.",
+            "id": "s2EQxlrxYC",
+            "type": "paragraph",
+            "data": {
+                "text": "<b><i>Nota:</i></b> el proceso de alta es el mismo tanto para\nentorno Bancor como para el entorno NIIF. Se debe ingresar en cada entorno para\nsu procesamiento.    "
             },
+            "tunes": {
+                "footnotes": []
+            }
         },
         {
-            id: "XKNT99-qqS",
-            type: "attaches",
-            data: {
-                file: {
-                    url: "https://drive.google.com/user/catalog/my-file.pdf",
-                    size: 12902,
-                    name: "file.pdf",
-                    extension: "pdf",
-                },
-                title: "My file",
-            },
+            "id": "omejC9S1Hv",
+            "type": "ctrlrelevante",
+            "data": {}
+        },
+
+        {
+            "id": "M3UXyblhAo",
+            "type": "header",
+            "data": {
+                "text": "Aplicativos que registran la contabilización de operaciones ",
+                "level": 3
+            }
         },
         {
-            id: "7RosVX2kcH",
-            type: "paragraph",
-            data: {
-                text: "Given data can be used as you want: render with HTML for Web clients, render natively for mobile apps, create the markup for Facebook Instant Articles or Google AMP, generate an audio version, and so on.",
+            "id": "KOcIofZ3Z1",
+            "type": "paragraph",
+            "data": {
+                "text": "A continuación, se exponen los procesos de la empresa, y los aplicativos que impactan la contabilidad de las los mismos:"
             },
+            "tunes": {
+                "footnotes": []
+            }
         },
         {
-            id: "eq06PsNsab",
-            type: "paragraph",
-            data: {
-                text: "Clean data is useful to sanitize, validate and process on the backend.",
+            "id": "OJ6yVRHE-d",
+            "type": "table",
+            "data": {
+                "withHeadings": true,
+                "content": [
+                    [
+                        "Proceso",
+                        "Aplicativo"
+                    ],
+                    [
+                        "Compra venta de títulos valores",
+                        "Mercap"
+                    ],
+                    [
+                        "Operaciones con bancos corresponsales",
+                        "SBI"
+                    ],
+                    [
+                        "Operaciones con el BCRA",
+                        "SBI"
+                    ],
+                    [
+                        "Depósitos a plazo fijo",
+                        "SAP Banking"
+                    ],
+                    [
+                        "Cuentas corrientes / Cajas de ahorro",
+                        "SIBA"
+                    ],
+                    [
+                        "Operaciones de tesorería",
+                        "Transactor Manager"
+                    ],
+                    [
+                        "Préstamos",
+                        "SAP Banking"
+                    ]
+                ]
             },
+            "tunes": {
+                "footnotes": []
+            }
         },
-        {
-            id: "hZAjSnqYMX",
-            type: "image",
-            data: {
-                file: {
-                    url: "assets/codex2x.png",
-                },
-                withBorder: false,
-                withBackground: false,
-                stretched: true,
-                caption: "CodeX Code Camp 2019",
-            },
-        },],
+
+        // {
+        //     id: "XKNT99-qqS",
+        //     type: "attaches",
+        //     data: {
+        //         file: {
+        //             url: "https://drive.google.com/user/catalog/my-file.pdf",
+        //             size: 12902,
+        //             name: "file.pdf",
+        //             extension: "pdf",
+        //         },
+        //         title: "My file",
+        //     },
+        // },
+
+        // {
+        //     id: "hZAjSnqYMX",
+        //     type: "image",
+        //     data: {
+        //         file: {
+        //             url: "assets/codex2x.png",
+        //         },
+        //         withBorder: false,
+        //         withBackground: false,
+        //         stretched: true,
+        //         caption: "CodeX Code Camp 2019",
+        //     },
+        // },
+    ],
 }
 
 const handleReady = (editor) => {
@@ -158,7 +248,7 @@ const handleReady = (editor) => {
 const editor = new EditorJS({
     holder: 'editorjs',
 
-    logLevel: 'VERBOSE',
+    logLevel: 'ERROR',
 
     autofocus: true,
 

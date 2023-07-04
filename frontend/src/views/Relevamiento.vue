@@ -8,18 +8,20 @@
     <!-------------------------------------------------------------->
     <Dialog v-model:visible="dialogoVisible" :header="dialogoHeader" :style="{ width: '80vw' }" position="center" modal
         draggable maximizable dismissableMask>
-        <p class="m-0">
+        <!-- <p class="m-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
             sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-        </p>
+        </p> -->
+
+        <TablaRelacion :tipo="relacionSeleccionada" />
 
         <p>
-            <br>
-            {{ $route.params }}
+            <!-- <br>
+            {{ $route.params }} -->
         </p>
 
         <template #header>
@@ -47,7 +49,7 @@
             <Button type="button" @click="toggleMenuRelaciones" aria-haspopup="true" aria-controls="overlay_menu" rounded
                 raised icon="pi pi-link" severity="success" v-tooltip.top="'Relaciones'" />
 
-            <!-- Editor -->
+            <!-- Opciones -->
             <Menu ref="menuEditor" id="overlay_menu" :model="menuEditorItems" popup />
             <Button type="button" @click="toggleMenuEditor" aria-haspopup="true" aria-controls="overlay_menu" rounded raised
                 icon="pi pi-bars" v-tooltip.top="'Opciones'" />
@@ -55,7 +57,7 @@
     </div>
     <Toast />
 
-    <ScrollTop threshold="200" class="custom-scrolltop" icon="pi pi-arrow-up" />
+    <ScrollTop :threshold="200" class="custom-scrolltop" icon="pi pi-arrow-up" />
 </template>
 
 <script setup>
@@ -67,11 +69,13 @@ import ScrollTop from 'primevue/scrolltop';
 import Dialog from 'primevue/dialog';
 import Menu from 'primevue/menu';
 import EditorBloques from '../components/EditorBloques.vue';
+import TablaRelacion from '../components/TablaRelacion.vue'
 
 const toast = useToast();
 
 const dialogoVisible = ref(false);
 const dialogoHeader = ref(' ');
+const relacionSeleccionada = ref('');
 const iconoHeader = ref('');
 
 const menuRelaciones = ref();
@@ -86,6 +90,7 @@ const menuRelacionesItems = ref([
                 command: () => {
                     iconoHeader.value = 'pi pi-exclamation-circle'
                     dialogoHeader.value = 'Riesgos'
+                    relacionSeleccionada.value = 'riesgos'
                     dialogoVisible.value = true
                 }
             },
@@ -95,6 +100,7 @@ const menuRelacionesItems = ref([
                 command: () => {
                     iconoHeader.value = 'pi pi-eye'
                     dialogoHeader.value = 'Controles'
+                    relacionSeleccionada.value = 'controles'
                     dialogoVisible.value = true
                 }
             },
@@ -104,6 +110,7 @@ const menuRelacionesItems = ref([
                 command: () => {
                     iconoHeader.value = 'pi pi-search'
                     dialogoHeader.value = 'Pruebas'
+                    relacionSeleccionada.value = 'pruebas'
                     dialogoVisible.value = true
                 }
             },
@@ -118,6 +125,7 @@ const menuRelacionesItems = ref([
                 command: () => {
                     iconoHeader.value = 'pi pi-sitemap'
                     dialogoHeader.value = 'Organigrama'
+                    relacionSeleccionada.value = 'organigrama'
                     dialogoVisible.value = true
                 }
             },
@@ -127,6 +135,7 @@ const menuRelacionesItems = ref([
                 command: () => {
                     iconoHeader.value = 'pi pi-file'
                     dialogoHeader.value = 'Normativas'
+                    relacionSeleccionada.value = 'normativas'
                     dialogoVisible.value = true
                 }
             },
@@ -136,6 +145,7 @@ const menuRelacionesItems = ref([
                 command: () => {
                     iconoHeader.value = 'pi pi-desktop'
                     dialogoHeader.value = 'Aplicativos'
+                    relacionSeleccionada.value = 'aplicativos'
                     dialogoVisible.value = true
                 }
             },
@@ -145,56 +155,55 @@ const menuRelacionesItems = ref([
 
 const menuEditorItems = ref([
     {
-        label: 'Riesgos',
-        icon: 'pi pi-exclamation-circle',
+        label: 'Edición',
+        icon: 'pi pi-pencil',
         command: () => {
-            dialogoHeader.value = 'Riesgos'
-            dialogoVisible.value = true
+            toast.add({ severity: 'success', summary: 'Edición', detail: 'Edición activada correctamente!', life: 3000 });
         }
     },
     {
-        label: 'Edición',
-        items: [
-            {
-                label: 'Riesgos',
-                icon: 'pi pi-exclamation-circle',
-                command: () => {
-                    dialogoHeader.value = 'Riesgos'
-                    dialogoVisible.value = true
-                }
-            },
-
-        ]
+        label: 'Bloquear documento',
+        icon: 'pi pi-lock',
+        command: () => {
+            toast.add({ severity: 'warn', summary: 'Bloqueo', detail: 'Documento bloqueado.', life: 3000 });
+        }
     },
     {
-        label: 'Otras',
-        items: [
-            {
-                label: 'Organigrama',
-                icon: 'pi pi-sitemap',
-                command: () => {
-                    dialogoHeader.value = 'Organigrama'
-                    dialogoVisible.value = true
-                }
-            },
-            {
-                label: 'Normativas',
-                icon: 'pi pi-file',
-                command: () => {
-                    dialogoHeader.value = 'Normativas'
-                    dialogoVisible.value = true
-                }
-            },
-            {
-                label: 'Aplicativos',
-                icon: 'pi pi-desktop',
-                command: () => {
-                    dialogoHeader.value = 'Aplicativos'
-                    dialogoVisible.value = true
-                }
-            },
-        ]
+        label: 'Imprimir',
+        icon: 'pi pi-print',
+        command: () => {
+            toast.add({ severity: 'info', summary: 'Impresión', detail: 'Imprimiendo...', life: 3000 });
+        }
     },
+    // {
+    //     label: 'Otras',
+    //     items: [
+    //         {
+    //             label: 'Organigrama',
+    //             icon: 'pi pi-sitemap',
+    //             command: () => {
+    //                 dialogoHeader.value = 'Organigrama'
+    //                 dialogoVisible.value = true
+    //             }
+    //         },
+    //         {
+    //             label: 'Normativas',
+    //             icon: 'pi pi-file',
+    //             command: () => {
+    //                 dialogoHeader.value = 'Normativas'
+    //                 dialogoVisible.value = true
+    //             }
+    //         },
+    //         {
+    //             label: 'Aplicativos',
+    //             icon: 'pi pi-desktop',
+    //             command: () => {
+    //                 dialogoHeader.value = 'Aplicativos'
+    //                 dialogoVisible.value = true
+    //             }
+    //         },
+    //     ]
+    // },
 ]);
 
 // const menuItems = ref([
