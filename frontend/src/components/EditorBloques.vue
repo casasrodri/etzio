@@ -1,6 +1,6 @@
 <template>
     <hr>
-    <div class="container">
+    <div class="container-editorjs">
         <div id="editorjs">
         </div>
     </div>
@@ -523,42 +523,43 @@ const verJson = () => {
 <style>
 /* Son no "scoped" para que se pueda aplicar bien a todos los bloques. */
 
-h1.ce-header {
-    font-size: 2.5em;
+/* EditorJs */
+
+#editorjs h1.ce-header {
+    font-size: 2.5em !important;
 }
 
-h2.ce-header {
+#editorjs h2.ce-header {
     font-size: 1.875em;
 }
 
-h3.ce-header {
-    font-size: 1.6em;
+#editorjs h3.ce-header {
+    font-size: 1.6em !important;
 }
 
-h4.ce-header {
-    font-size: 1.3em;
+#editorjs h4.ce-header {
+    font-size: 1.3em !important;
 }
 
-.codex-editor__redactor {
+#editorjs .codex-editor__redactor {
     padding-bottom: 50px !important;
 }
 
-.p-button {
+#editorjs .p-button {
     margin: 3px !important;
 }
 
-div.ce-stub svg path {
+#editorjs div.ce-stub svg path {
     stroke: none;
 }
 
-.ce-stub {
+#editorjs .ce-stub {
     border-radius: 30px;
 }
 
-.ce-block--stretched .ce-block__content {
+#editorjs .ce-block--stretched .ce-block__content {
     max-width: 650px !important;
 }
-
 
 /* Códigos puntuales para mi bloque personalizado */
 .simple-image {
