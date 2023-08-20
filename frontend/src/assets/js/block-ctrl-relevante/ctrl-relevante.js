@@ -45,7 +45,7 @@ export default class SimpleImage {
             </div>
             </div>
             <div id="ampliar" class="w-5 h-5">
-            <a href="#">
+            <a href="/app/auditorias/2023/revisiones/DEP-CC-COM/control/87">
             <i class="pi pi-arrow-up-right"></i>
             </a>
         </div>

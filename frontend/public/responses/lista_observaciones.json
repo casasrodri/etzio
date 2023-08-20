@@ -1,0 +1,50 @@
+[
+    {
+        "id": 32,
+        "titulo": "Normativa no establece controles para personas jurídicas",
+        "riesgo": "Alto",
+        "descripcion": "La normativa interna de la entidad no establece como debe proceder el alta de una cuenta corriente para personas jurídicas en la red de sucursales.",
+        "responsable": "Gerencia de Contabilidad",
+        "estado": "Pendiente Sin fecha de Regularización (PSF)",
+        "sector": "Auditoría Centralizada",
+        "efectos": [
+            "Problemas legales en la relación comercial.",
+            "Falta de instrumentación para el cobro de comisiones."
+        ],
+        "recomendaciones": "Adaptar la normativa interna para incluir todos los tipos de clientes con los que la Entidad opera.",
+        "fecha_alta": "2022-07-23",
+        "fecha_solucion": null
+    },
+    {
+        "id": 21,
+        "titulo": "Diferencia entre el flujo formal y el flujo real",
+        "riesgo": "Medio",
+        "descripcion": "No se evidencia que los controles realizados coincidan con el manual de procedimientos.",
+        "responsable": "Gerencia de Gestión Integral de Riesgos",
+        "estado": "Pendiente Fecha Vencida (PFV)",
+        "sector": "Auditoría Centralizada",
+        "efectos": [
+            "Normativa desactualizada.",
+            "Falta de evidencia de controles realizados."
+        ],
+        "recomendaciones": "Adaptar la normativa interna para incluir todos los controles realizados por la entidad.",
+        "fecha_alta": "2022-01-28",
+        "fecha_solucion": "2022-12-15"
+    },
+    {
+        "id": 17,
+        "titulo": "Ausencia de alta de legajo de cuenta corriente",
+        "riesgo": "Medio",
+        "descripcion": "No se evidenció la conformación de legajos para una muestra de altas de cuentas.",
+        "responsable": "Sucursal Arroyito",
+        "estado": "Pendiente Sin fecha de Regularización (PSF)",
+        "sector": "Auditoría de Sucursales",
+        "efectos": [
+            "Productos sin la documentación correspondiente.",
+            "Falta de evidencia de controles realizados."
+        ],
+        "recomendaciones": "Adaptar la normativa interna para incluir todos los controles realizados por la entidad.",
+        "fecha_alta": "2022-01-28",
+        "fecha_solucion": "2022-12-15"
+    }
+]

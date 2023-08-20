@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "host": "vite --host --port 80"
+    "host": "vite --host --port 80 --logLevel info --debug"
   },
   "dependencies": {
     "@editorjs/editorjs": "^2.27.2",

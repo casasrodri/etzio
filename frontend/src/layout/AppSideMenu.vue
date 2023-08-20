@@ -18,7 +18,7 @@
                     <SubItemMenu nombre="Seguimiento" url="pendiente" />
                 </DesplegableMenuItem> -->
 
-                <NormalMenuItem nombre="Observaciones" icon="pi-eye" url="pendiente" v-if="menu.observ" />
+                <NormalMenuItem nombre="Observaciones" icon="pi-eye" url="observaciones" v-if="menu.observ" />
 
                 <NormalMenuItem nombre="Requerimientos" icon="pi-th-large" url="pendiente" v-if="menu.requer" />
 

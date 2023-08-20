@@ -13,6 +13,9 @@ import ControlRelevante from './views/ControlRelevante.vue'
 import Riesgo from './views/Riesgo.vue'
 import Prueba from './views/Prueba.vue'
 
+import ObservacionesList from './views/ObservacionesList.vue'
+import Observacion from './views/Observacion.vue'
+
 import ParamCiclos from './views/ParamCiclos.vue'
 
 import NotFound from './views/NotFound.vue'
@@ -82,22 +85,21 @@ const router = createRouter({
             title: 'Prueba'
           }
         },
-
-
-        // {
-        //   path: 'observaciones',
-        //   component: ObservacionesList,
-        //   meta: {
-        //     title: 'Observaciones'
-        //   }
-        // },
-        // {
-        //   path: 'observaciones/:id/:nombre?',
-        //   component: Observacion,
-        //   meta: {
-        //     title: 'Observación'
-        //   }
-        // },
+        {
+          path: 'observaciones',
+          component: ObservacionesList,
+          meta: {
+            title: 'Observaciones'
+          },
+          name: 'observaciones'
+        },
+        {
+          path: 'observaciones/:id/:nombre?',
+          component: Observacion,
+          meta: {
+            title: 'Observación'
+          }
+        },
 
 
         // {
@@ -105,7 +107,8 @@ const router = createRouter({
         //   component: RequerimientosList,
         //   meta: {
         //     title: 'Requerimientos'
-        //   }
+        //   },
+        //   name: 'requerimientos'
         // },
         // {
         //   path: 'requerimientos/:id/:nombre?',
