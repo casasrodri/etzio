@@ -14,6 +14,7 @@ import Riesgo from './views/Riesgo.vue'
 import Prueba from './views/Prueba.vue'
 
 import ParamCiclos from './views/ParamCiclos.vue'
+import FormCiclos from './views/FormCiclos.vue'
 
 import NotFound from './views/NotFound.vue'
 import Vacio from './components/Vacio.vue'
@@ -125,7 +126,16 @@ const router = createRouter({
         {
           path: 'parametros/ciclos',
           name: 'ciclos',
-          component: ParamCiclos, meta: {
+          component: ParamCiclos,
+          meta: {
+            title: 'Ciclos'
+          }
+        },
+        {
+          path: 'parametros/ciclos/:id',
+          name: 'formciclos',
+          component: FormCiclos,
+          meta: {
             title: 'Ciclos'
           }
         },

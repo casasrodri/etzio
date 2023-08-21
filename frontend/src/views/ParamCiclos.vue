@@ -4,13 +4,13 @@
         <div class="grid max-w-6xl">
             <div class="col-12">
                 <div class="card">
-                    <TreeTable class="text-sm my-treetable" :value="treeTableValue" paginator :rows="10"
+                    <TreeTable class="text-sm my-treetable" :value="listaNodosCiclos" paginator :rows="10"
                         :alwaysShowPaginator="false" :rowsPerPageOptions="[10, 25, 50]" :filters="filters"
                         filterMode="lenient" :sortField="'nombre'" :sortOrder="1">
 
                         <template #header>
                             <div class="flex justify-between">
-                                <Button icon="pi pi-plus" label="Nuevo" @click="alertt('Nuevo ciclo')" size="small" />
+                                <Button icon="pi pi-plus" label="Nuevo" @click="crearCiclo()" size="small" />
 
                                 <div class="text-right">
                                     <div class="p-input-icon-left">
@@ -27,12 +27,17 @@
                         <Column field="nombre" header="Nombre" sortable></Column>
                         <Column header="Acciones">
                             <template #body="slotProps">
+
                                 <Button icon="pi pi-plus" severity="success" text rounded title="Nuevo subnivel"
-                                    @click="alertt(slotProps.node.data.cod_ext)" size="small" />
+                                    @click="crearHijo(slotProps.node.data.id)" size="small" />
+
                                 <Button icon="pi pi-pencil" severity="warning" text rounded title="Editar"
-                                    @click="alertt(slotProps.node.data.cod_ext)" size="small" />
+                                    @click="editarCiclo(slotProps.node.data.id)" size="small" />
+
                                 <Button icon="pi pi-times" severity="danger" text rounded title="Eliminar"
-                                    @click="alertt(JSON.stringify(slotProps.node.data))" size="small" />
+                                    @click="eliminarCiclo(slotProps.node.data.id)" size="small"
+                                    v-if="posibleEliminar(slotProps.node.data.id)" />
+
                             </template>
                         </Column>
 
@@ -45,18 +50,52 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import getNodeResponse from '../assets/js/NodeService';
+import { CiclosApi } from '../api';
+import { useRouter } from 'vue-router';
 
+const router = useRouter()
+const ciclosApi = new CiclosApi();
 const filters = ref({});
-const treeTableValue = ref(null);
+const listaNodosCiclos = ref(null);
 
-onMounted(() => {
-    getNodeResponse('nodosCiclos').then((data) => (treeTableValue.value = data));
+const cargarNodos = async () => {
+    const res = await ciclosApi.listNodes();
+    listaNodosCiclos.value = res.data;
+}
+
+onMounted(async () => {
+    cargarNodos();
 });
 
-function alertt(num) {
-    alert(num)
+function posibleEliminar(id) {
+    // Se puede eliminar cuando no tiene hijos.
+    const elemento = listaNodosCiclos.value.find(e => e.data.id === id)
+    if (!elemento) {
+        return true;
+    }
+    return !Boolean(elemento.children.length);
 }
+
+const eliminarCiclo = async (id) => {
+    const confirmacion = window.confirm('Seguro que desea eliminar?')
+    if (confirmacion) {
+        await ciclosApi.delete(id);
+        cargarNodos();
+    }
+}
+
+const editarCiclo = id => {
+    router.push({ name: 'formciclos', params: { id: id } })
+}
+
+const crearHijo = padre_id => {
+    router.push({ name: 'formciclos', params: { id: 'nuevo' }, query: { padre: padre_id } })
+}
+
+const crearCiclo = () => {
+    router.push({ name: 'formciclos', params: { id: 'nuevo' } })
+}
+
 </script>
 
 <style scoped>
