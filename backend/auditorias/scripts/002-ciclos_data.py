@@ -18,7 +18,7 @@ def run(*args):
     for ciclo in ciclos:
         if ciclo['padre']:
             ciclo['padre'] = Ciclo(ciclo['padre'])
-            print(ciclo['padre'])
 
         c = Ciclo(**ciclo)
         c.save()
+        print('Ciclo creado:', ciclo['nombre'])
