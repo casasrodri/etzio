@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializer import CicloSerializer
-from .models import Ciclo
+from auditorias import serializer
+from auditorias import models
 from rest_framework.response import Response
 
 
@@ -8,8 +8,8 @@ from rest_framework.response import Response
 
 
 class CicloView(viewsets.ModelViewSet):
-    serializer_class = CicloSerializer
-    queryset = Ciclo.objects.all()
+    serializer_class = serializer.CicloSerializer
+    queryset = models.Ciclo.objects.all()
     # permission_classes = [IsAccountAdminOrReadOnly]
 
 
@@ -66,9 +66,15 @@ def extraer_campos(obj, campos) -> dict:
 
 class CicloNodosView(viewsets.ViewSet):
     def list(self, request):
-        ciclos = Ciclo.objects.all()
+        ciclos = models.Ciclo.objects.all()
         campos = ['id', 'nombre', 'codigo', 'padre_id']
         ciclos = [extraer_campos(ciclo, campos) for ciclo in ciclos]
         nodos = generar_treenodes(ciclos)
 
         return Response(nodos)
+
+
+class AuditoriaView(viewsets.ModelViewSet):
+    serializer_class = serializer.AuditoriasSerializer
+    queryset = models.Auditoria.objects.all()
+    # permission_classes = [IsAccountAdminOrReadOnly]

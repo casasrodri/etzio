@@ -18,3 +18,15 @@ class Ciclo(TimeStampedModel):
 
     def __str__(self) -> str:
         return self.nombre
+
+
+class Auditoria(TimeStampedModel):
+    codigo = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=200)
+    tipo = models.CharField(max_length=20)
+    estado = models.CharField(max_length=20)
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+
+    def __str__(self) -> str:
+        return self.nombre
